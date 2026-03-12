@@ -67,10 +67,9 @@ class Game:
         self._build_turn_order()
 
     def _build_turn_order(self):
-        """Turn order starts from the player to the captain's left."""
+        """Turn order starts from the player to the captain's left, captain goes last."""
         n = len(self.players)
-        self.turn_order = [(self.captain_index + 1 + i) % n
-                           for i in range(n - 1)]
+        self.turn_order = [(self.captain_index + 1 + i) % n for i in range(n)]
         self.turn_index = 0
 
     @property
